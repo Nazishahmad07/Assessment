@@ -46,6 +46,21 @@ app.use('/api/auth', authRoutes);
 app.use('/api/events', eventRoutes);
 app.use('/api/registrations', registrationRoutes);
 
+// Root endpoint
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'Campus Events API Server',
+    status: 'OK',
+    timestamp: new Date().toISOString(),
+    endpoints: {
+      auth: '/api/auth',
+      events: '/api/events',
+      registrations: '/api/registrations',
+      health: '/api/health'
+    }
+  });
+});
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
@@ -59,7 +74,32 @@ app.use((err, req, res, next) => {
 
 // 404 handler
 app.use('*', (req, res) => {
-  res.status(404).json({ message: 'Route not found' });
+  res.status(404).json({ 
+    message: 'Route not found',
+    requestedPath: req.originalUrl,
+    method: req.method,
+    availableEndpoints: {
+      root: 'GET /',
+      health: 'GET /api/health',
+      auth: {
+        register: 'POST /api/auth/register',
+        login: 'POST /api/auth/login',
+        profile: 'GET /api/auth/me'
+      },
+      events: {
+        list: 'GET /api/events',
+        create: 'POST /api/events',
+        get: 'GET /api/events/:id',
+        update: 'PUT /api/events/:id',
+        delete: 'DELETE /api/events/:id'
+      },
+      registrations: {
+        register: 'POST /api/registrations',
+        myRegistrations: 'GET /api/registrations/my-registrations',
+        eventRegistrations: 'GET /api/registrations/event/:eventId'
+      }
+    }
+  });
 });
 
 // For Vercel deployment - export the app as default
