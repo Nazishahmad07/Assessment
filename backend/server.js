@@ -19,7 +19,12 @@ const app = express();
 // Middleware
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://assessment-6vdlfzqz6-nazish-ahmads-projects.vercel.app', 'https://*.vercel.app']
+    ? [
+        'https://assessment-6vdlfzqz6-nazish-ahmads-projects.vercel.app', 
+        'https://*.vercel.app',
+        'https://assessment-ashy.vercel.app',
+        'https://your-frontend-domain.vercel.app'  // Replace with your actual frontend domain
+      ]
     : "http://localhost:3000",
   credentials: true
 }));
