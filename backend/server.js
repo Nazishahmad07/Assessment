@@ -21,9 +21,10 @@ app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
     ? [
         'https://assessment-6vdlfzqz6-nazish-ahmads-projects.vercel.app', 
-        'https://*.vercel.app',
         'https://assessment-ashy.vercel.app',
-        'https://your-frontend-domain.vercel.app'  // Replace with your actual frontend domain
+        'https://assessment-kexs.vercel.app',  // Your frontend domain
+        /^https:\/\/.*\.vercel\.app$/,  // Allow all Vercel domains
+        /^https:\/\/.*\.netlify\.app$/  // Allow all Netlify domains
       ]
     : "http://localhost:3000",
   credentials: true

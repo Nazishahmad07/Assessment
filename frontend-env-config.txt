@@ -1,0 +1,22 @@
+# Frontend Environment Variables for Vercel
+# Your frontend URL: https://assessment-kexs.vercel.app/
+
+# Go to your Vercel dashboard → Frontend Project → Settings → Environment Variables
+# Add ONE of the following variables:
+
+# For Vite (if using Vite):
+VITE_BACKEND_URL=https://assessment-ashy.vercel.app/api
+
+# For Create React App (if using CRA):
+REACT_APP_API_URL=https://assessment-ashy.vercel.app/api
+
+# Instructions:
+# 1. Go to https://vercel.com/dashboard
+# 2. Find your frontend project (assessment-kexs)
+# 3. Go to Settings → Environment Variables
+# 4. Add the appropriate variable above
+# 5. Set environment to "Production"
+# 6. Redeploy your frontend
+
+# After setting the environment variable, redeploy:
+# vercel --prod
