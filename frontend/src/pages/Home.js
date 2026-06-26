@@ -80,7 +80,7 @@ const Home = () => {
               </div>
               <h3 style={{ marginBottom: '1rem' }}>Real-time Updates</h3>
               <p style={{ color: '#666' }}>
-                Get live attendee counts and instant notifications when new participants register for events.
+                Get the live attendee counts and instant notifications when new participants register for events.
               </p>
             </div>
 
