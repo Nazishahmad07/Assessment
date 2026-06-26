@@ -59,7 +59,7 @@ const Home = () => {
               Why Choose Our Platform?
             </h2>
             <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
-              Experience the future of campus event management with real-time updates and seamless registration
+              Experience future of campus event management with real-time updates and seamless registration
             </p>
           </div>
 
